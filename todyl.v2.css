@@ -1,0 +1,165 @@
+/* =========================================================
+   Todyl Ashby Job Board — Custom CSS (TT Hoves Pro)
+   Paste this as your `todyl.css`
+   ========================================================= */
+
+/* -----------------------------
+   1) Load TT Hoves Pro
+   NOTE: These URLs must be publicly accessible.
+   ----------------------------- */
+@font-face {
+  font-family: "TT Hoves Pro";
+  src: url("https://cdn.prod.website-files.com/684b65f601169a23aa3169f4/68b8a2aba79a6b36a470fca1_TT-Hoves-Pro-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Hoves Pro";
+  src: url("https://cdn.prod.website-files.com/684b65f601169a23aa3169f4/68b8a2ab0cd64fbdd36e2f67_TT-Hoves-Pro-Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Hoves Pro";
+  src: url("https://cdn.prod.website-files.com/684b65f601169a23aa3169f4/68b8a2ab58abd7795d3617dd_TT-Hoves-Pro-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Hoves Pro";
+  src: url("https://cdn.prod.website-files.com/684b65f601169a23aa3169f4/68b8a2ab07b3c1dcbcfc7d91_TT-Hoves-Pro-Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -----------------------------
+   2) Theme variables
+   ----------------------------- */
+:root {
+  /* Colors */
+  --colorPrimary900: #18232b;
+  --colorPrimary600: #3ba6d1;
+
+  --colorAppBackground: #f5f8fb;
+  --colorNeutral000: #ffffff;
+  --colorNeutral100: #f5f8fb;
+  --colorNeutral800: #4f5e66;
+  --colorNeutralShadow: rgba(6, 18, 25, 0.08);
+
+  /* Layout */
+  --widthMaxJobBoard: 1000px;
+
+  /* Radius */
+  --borderRadiusContainer: 0px;
+  --borderRadiusControl: 8px;
+  --borderRadiusButton: 0px;
+
+  /* Typography */
+  --fontFamily: "TT Hoves Pro", system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+}
+
+/* -----------------------------
+   3) Force font everywhere inside Ashby
+   ----------------------------- */
+html,
+body {
+  font-family: var(--fontFamily) !important;
+  background: var(--colorAppBackground) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--fontFamily) !important;
+}
+
+/* Apply font to all Ashby components defensively */
+[class^="ashby-"],
+[class*=" ashby-"] {
+  font-family: var(--fontFamily) !important;
+}
+
+/* -----------------------------
+   4) Small UI polish (optional but solid)
+   ----------------------------- */
+
+/* Filters */
+.ashby-job-board-filter {
+  border: 1px solid var(--colorNeutral800);
+  box-shadow: 0px 4px 10px 0px rgba(17, 17, 17, 0.02);
+  border-radius: var(--borderRadiusControl);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ashby-job-board-filter:hover,
+.ashby-job-board-filter:focus,
+.ashby-job-board-filter:focus-visible {
+  border-color: var(--colorPrimary600);
+  box-shadow: 0 0 0 3px rgba(59, 166, 209, 0.18);
+  outline: none;
+}
+
+.ashby-job-board-filters-label {
+  color: var(--colorNeutral800);
+  font-weight: 500;
+}
+
+/* Job cards */
+.ashby-job-posting-brief {
+  margin-bottom: 24px;
+  background: var(--colorNeutral000);
+  border-radius: var(--borderRadiusContainer);
+  box-shadow: 0 10px 30px var(--colorNeutralShadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ashby-job-posting-brief:hover {
+  transform: scale(1.01);
+  box-shadow: 0 16px 45px rgba(6, 18, 25, 0.12);
+}
+
+.ashby-job-posting-brief-title {
+  color: var(--colorPrimary900);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Back button */
+.ashby-job-board-back-to-all-jobs-button {
+  border-radius: var(--borderRadiusButton);
+}
+
+/* Buttons (generic) */
+button,
+a[role="button"],
+input[type="submit"],
+input[type="button"] {
+  border-radius: var(--borderRadiusButton) !important;
+}
+
+/* Hide empty states (Ashby + Webflow common utility classes) */
+.w-dyn-empty {
+  background-color: #ddd;
+  padding: 10px;
+}
+
+.w-dyn-hide,
+.w-dyn-bind-empty,
+.w-condition-invisible {
+  display: none !important;
+}
