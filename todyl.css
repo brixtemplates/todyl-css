@@ -1,3 +1,5 @@
+
+
 /* stylelint-disable */
 
 /* These variables can be used to control values throughout the job board. */
@@ -28,7 +30,7 @@
     --borderRadiusButton: 0px;
 
     /*  Font families */
-    --fontFamily: "Tt Hoves Pro", sans-serif ;
+    --fontFamily: "Inter", sans-serif ;
 
     --colorAppBackground: #F5F8FB;
     --colorNeutral800: #4F5E66;
@@ -193,4 +195,5 @@
 .ashby-job-posting-right-pane-tab-slider {}
 
 /* A container for any surveys specified for this application form. */
+
 .ashby-survey-form-container {}
